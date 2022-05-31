@@ -11,7 +11,7 @@ static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#3d3d3d";
+static const char col_cyan[]        = "#0077b6";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -33,7 +33,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.70; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -59,11 +59,11 @@ static const Layout layouts[] = {
 /*lockscreen*/
 static const char *lockcmd[] = {"slock", NULL};
 /*screenshot*/
-static const char *screenshot[] = {"scrot", "/home/el/Image/screenshots/shot-%Y-%T-screenshot.jpg",NULL};
+static const char *screenshot[] = {"scrot", "/home/el/Image/screenshots/%Y-%T-screenshot.jpg",NULL};
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *urlcmd[]  = { "clipmenu-url", NULL };
 static const char *clipcmd[]  = { "clipmenu", "-i", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 
@@ -97,15 +97,15 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_a,                      0)
-	TAGKEYS(                        XK_z,                      1)
-	TAGKEYS(                        XK_e,                      2)
-	TAGKEYS(                        XK_r,                      3)
-	TAGKEYS(                        XK_t,                      4)
-	TAGKEYS(                        XK_y,                      5)
-	TAGKEYS(                        XK_u,                      6)
-	TAGKEYS(                        XK_i,                      7)
-	TAGKEYS(                        XK_o,                      8)
+	TAGKEYS(                        XK_1,                      0)
+	TAGKEYS(                        XK_2,                      1)
+	TAGKEYS(                        XK_3,                      2)
+	TAGKEYS(                        XK_4,                      3)
+	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
+	TAGKEYS(                        XK_7,                      6)
+	TAGKEYS(                        XK_8,                      7)
+	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
